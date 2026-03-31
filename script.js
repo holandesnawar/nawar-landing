@@ -158,6 +158,21 @@
   });
 })();
 
+/* ── Sticky features dot animation ──────────────────────────── */
+(function initStickyDot() {
+  const section = document.querySelector('.differentiators');
+  const dot = document.getElementById('sf-dot');
+  if (!section || !dot) return;
+
+  window.addEventListener('scroll', () => {
+    const { top, height } = section.getBoundingClientRect();
+    const travel = height - window.innerHeight;
+    const raw = travel > 0 ? (-top) / travel : 0;
+    const progress = Math.min(Math.max(raw, 0), 1);
+    dot.style.top = (progress * 100) + '%';
+  }, { passive: true });
+})();
+
 /* ── Progress bar animation on mockup ───────────────────────── */
 (function animateMockupProgress() {
   const fill = document.querySelector('.mockup-progress-fill');
