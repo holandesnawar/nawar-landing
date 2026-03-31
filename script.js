@@ -68,21 +68,35 @@
   items.forEach(el => observer.observe(el));
 })();
 
-/* ── Sticky Desktop Nav ──────────────────────────────────────── */
-(function initStickyNav() {
-  const nav = document.getElementById('nav');
-  if (!nav) return;
+/* ── Desktop Nav: sticky blur + countdown ────────────────────── */
+(function initDesktopNav() {
+  // Scroll blur
+  window.addEventListener('scroll', function() {
+    const nav = document.getElementById('nav');
+    if (nav) nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
 
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        nav.classList.toggle('scrolled', window.scrollY > 40);
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
+  // Timer (same key as mobile nav)
+  const STORAGE_KEY = 'nawar_offer_end_v2';
+  let endTs = parseInt(localStorage.getItem(STORAGE_KEY), 10);
+  if (!endTs || isNaN(endTs)) {
+    endTs = Date.now() + 7 * 24 * 60 * 60 * 1000;
+    localStorage.setItem(STORAGE_KEY, endTs);
+  }
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function tick() {
+    let diff = endTs - Date.now();
+    if (diff < 0) diff = 0;
+    const d = Math.floor(diff / (24*60*60*1000));
+    const h = Math.floor((diff % (24*60*60*1000)) / (60*60*1000));
+    const m = Math.floor((diff % (60*60*1000)) / (60*1000));
+    const s = Math.floor((diff % (60*1000)) / 1000);
+    const el = document.getElementById('nav-desktop-timer');
+    if (el) el.textContent = `${d}D ${pad(h)}H ${pad(m)}M ${pad(s)}S`;
+    if (diff === 0) clearInterval(iv);
+  }
+  const iv = setInterval(tick, 1000);
+  tick();
 })();
 
 /* ── FAQ Accordion ───────────────────────────────────────────── */
