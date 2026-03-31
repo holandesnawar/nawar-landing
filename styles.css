@@ -89,24 +89,23 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   justify-content: center;
   gap: 8px;
   font-family: var(--font-head);
-  font-weight: 700;
-  border-radius: var(--radius);
+  font-weight: 600;
+  border-radius: 10px;
   cursor: pointer;
   transition: all .2s ease;
   white-space: nowrap;
   text-decoration: none;
+  color: #fff;
 }
 
-/* Primary — light blue (like nawar-academia) */
+/* Primary — consistent across all breakpoints */
 .btn-primary {
   background: var(--brand-lt);
   color: #fff;
-  box-shadow: 0 4px 20px rgba(77,163,255,.35);
 }
 .btn-primary:hover {
   background: #69baff;
   transform: scale(1.02);
-  box-shadow: 0 6px 28px rgba(77,163,255,.50);
 }
 .btn-primary:active { transform: scale(.98); }
 
@@ -114,12 +113,10 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .btn-white {
   background: #fff;
   color: var(--brand);
-  box-shadow: 0 2px 14px rgba(0,0,0,.15);
 }
 .btn-white:hover {
   background: #F0F5FF;
   transform: scale(1.02);
-  box-shadow: 0 4px 24px rgba(0,0,0,.22);
 }
 
 /* Outline white — secondary on dark */
@@ -131,7 +128,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .btn-outline:hover {
   background: rgba(255,255,255,.10);
   border-color: rgba(255,255,255,.55);
-  transform: scale(1.02);
 }
 
 /* Outline blue — secondary on light */
@@ -144,13 +140,32 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   background: var(--brand-mid);
   color: #fff;
   border-color: var(--brand-mid);
-  transform: scale(1.02);
 }
 
 .btn-sm  { font-size: 13px; padding: 8px 18px; }
 .btn-md  { font-size: 14px; padding: 11px 24px; }
 .btn-lg  { font-size: 15px; padding: 14px 28px; }
 .btn-xl  { font-size: 16px; padding: 16px 36px; width: 100%; }
+
+/* Mobile sticky button — smaller */
+.btn-sticky {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: var(--font-head);
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .2s ease;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #fff;
+  background: var(--brand-lt);
+  font-size: 13px;
+  padding: 9px 18px;
+}
+.btn-sticky:hover { background: #69baff; }
 
 /* ── Section typography ──────────────────────────────────────── */
 .eyebrow {
@@ -1312,18 +1327,9 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 ══════════════════════════════════════════════════════════════ */
 .guarantee {
   padding: 80px 0;
-  background: linear-gradient(135deg, #0b1a5e 0%, #1D0084 50%, #025dc7 100%);
+  background: #fff;
   position: relative;
   overflow: hidden;
-}
-.guarantee::before {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 700px; height: 500px;
-  background: radial-gradient(ellipse, rgba(77,163,255,.18) 0%, transparent 65%);
-  pointer-events: none;
 }
 .guarantee-inner {
   position: relative;
@@ -1333,13 +1339,11 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   align-items: center;
   max-width: 820px;
   margin: 0 auto;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.14);
+  background: #f8faff;
+  border: 1px solid #e2e8f0;
   border-radius: 28px;
   padding: 44px 48px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 24px 64px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.12);
+  box-shadow: 0 8px 32px rgba(0,0,0,.06);
 }
 @media (max-width: 599px) {
   .guarantee-inner {
@@ -1352,23 +1356,32 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .guarantee-icon-wrap {
   width: 88px; height: 88px;
   border-radius: 50%;
-  background: rgba(255,255,255,.10);
-  border: 2px solid rgba(255,255,255,.20);
+  background: #eef4ff;
+  border: 2px solid #c7deff;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
   font-size: 40px;
-  box-shadow: 0 8px 32px rgba(0,0,0,.20);
+  box-shadow: 0 4px 16px rgba(29,0,132,.08);
 }
 .guarantee-icon { display: none; }
+.eyebrow-guarantee {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--brand-mid);
+  margin-bottom: 10px;
+}
 .guarantee-content h2 {
   font-family: var(--font-head);
   font-size: clamp(20px, 2.5vw, 28px);
-  font-weight: 800;
-  color: #fff;
+  font-weight: 700;
+  color: #1f2937;
   margin-bottom: 12px;
   line-height: 1.2;
 }
-.guarantee-content p { font-size: 15px; color: rgba(255,255,255,.70); line-height: 1.75; margin-bottom: 10px; }
+.guarantee-content p { font-size: 15px; color: #374151; line-height: 1.75; margin-bottom: 10px; }
 .guarantee-pills {
   display: flex;
   flex-wrap: wrap;
@@ -1381,15 +1394,15 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   gap: 6px;
   font-size: 12px;
   font-weight: 600;
-  color: rgba(255,255,255,.85);
-  background: rgba(255,255,255,.10);
-  border: 1px solid rgba(255,255,255,.18);
+  color: var(--brand-mid);
+  background: #eef4ff;
+  border: 1px solid #c7deff;
   padding: 5px 14px;
   border-radius: 100px;
 }
 .guarantee-fine {
   font-size: 13px;
-  color: rgba(255,255,255,.45);
+  color: #6b7280;
   margin-top: 16px;
 }
 
@@ -1509,7 +1522,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
    FOOTER
 ══════════════════════════════════════════════════════════════ */
 .footer {
-  background: #0e0030;
+  background: var(--brand);
   padding: 40px 0;
   border-top: 1px solid rgba(255,255,255,.06);
 }
