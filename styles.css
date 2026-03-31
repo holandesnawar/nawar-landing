@@ -15,7 +15,7 @@
   --border:      #DDE6F5;
   --text:        #0C0C1E;
   --text-md:     #374151;
-  --text-lt:     #5A6480;
+  --text-lt:     #4B5568;
   --text-xs:     #9CA3AF;
   --radius:      20px;
   --radius-sm:   12px;
@@ -100,7 +100,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 /* Primary — light blue (like nawar-academia) */
 .btn-primary {
   background: var(--brand-lt);
-  color: #0a1a4a;
+  color: #fff;
   box-shadow: 0 4px 20px rgba(77,163,255,.35);
 }
 .btn-primary:hover {
@@ -166,9 +166,8 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   margin-bottom: 16px;
 }
 .eyebrow-dark {
-  color: rgba(255,255,255,.7);
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.15);
+  color: #e0f2ff;
+  background: var(--brand-mid);
 }
 .eyebrow-light {
   color: var(--brand-mid);
@@ -507,7 +506,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   transform: translateY(-3px);
 }
 .pain-icon { font-size: 26px; margin-bottom: 12px; }
-.pain-card p { font-size: 14px; color: var(--text-md); line-height: 1.65; }
+.pain-card p { font-size: 14px; color: #1f2937; line-height: 1.65; }
 
 .pain-callout {
   text-align: center;
@@ -516,7 +515,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   border: 1px solid var(--border);
   border-radius: var(--radius);
 }
-.pain-callout p { font-size: clamp(16px, 2vw, 20px); color: var(--text-md); line-height: 1.6; }
+.pain-callout p { font-size: clamp(16px, 2vw, 20px); color: #1f2937; line-height: 1.6; font-weight: 500; }
 .pain-callout strong { color: var(--brand); }
 
 /* ══════════════════════════════════════════════════════════════
@@ -693,7 +692,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   color: var(--brand);
   margin-bottom: 8px;
 }
-.include-card p { font-size: 13px; color: var(--text-lt); line-height: 1.65; }
+.include-card p { font-size: 13px; color: #374151; line-height: 1.65; }
 
 /* ══════════════════════════════════════════════════════════════
    INSIDE LOOK
@@ -823,7 +822,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   margin-top: 2px;
 }
 .diff-item strong { font-size: 15px; font-weight: 700; color: var(--brand); display: block; margin-bottom: 6px; }
-.diff-item p { font-size: 14px; color: var(--text-lt); line-height: 1.65; }
+.diff-item p { font-size: 14px; color: #374151; line-height: 1.65; }
 
 /* ══════════════════════════════════════════════════════════════
    INSTRUCTOR
@@ -979,7 +978,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 .pricing-features li {
   display: flex; gap: 10px; align-items: flex-start;
-  font-size: 14px; color: var(--text-md); line-height: 1.5;
+  font-size: 14px; color: #1f2937; line-height: 1.5; font-weight: 500;
 }
 .pricing-features li span {
   color: #22c55e; font-weight: 700; font-size: 15px; flex-shrink: 0;
@@ -1036,8 +1035,8 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   font-family: var(--font-head); font-size: 22px; font-weight: 700;
   color: var(--brand); margin-bottom: 14px;
 }
-.guarantee-content p { font-size: 15px; color: var(--text-md); line-height: 1.7; margin-bottom: 10px; }
-.guarantee-fine { font-size: 13px; color: var(--text-lt); }
+.guarantee-content p { font-size: 15px; color: #1f2937; line-height: 1.7; margin-bottom: 10px; }
+.guarantee-fine { font-size: 13px; color: #374151; }
 
 /* ══════════════════════════════════════════════════════════════
    FAQ
@@ -1081,7 +1080,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   overflow: hidden;
   transition: max-height .35s ease, padding .35s ease;
   font-size: 14px;
-  color: var(--text-md);
+  color: #1f2937;
   line-height: 1.7;
   padding: 0 20px;
 }
@@ -1157,10 +1156,11 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   position: fixed;
   bottom: 0; left: 0; right: 0;
   z-index: 800;
-  background: rgba(29,0,132,.95);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-top: 1px solid rgba(255,255,255,.12);
+  background: rgba(20,22,28,.35);
+  -webkit-backdrop-filter: saturate(140%) blur(18px);
+  backdrop-filter: saturate(140%) blur(18px);
+  border-top: 1px solid rgba(255,255,255,.22);
+  box-shadow: 0 -8px 24px rgba(0,0,0,.35), inset 0 -1px 0 rgba(255,255,255,.10);
   padding: 12px 16px;
   display: flex;
   align-items: center;
@@ -1173,3 +1173,184 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .mobile-sticky-price strong { font-family: var(--font-head); font-size: 18px; font-weight: 800; color: #fff; }
 .mobile-sticky-price span  { font-size: 11px; color: rgba(255,255,255,.5); }
 @media (min-width: 960px) { .mobile-sticky { display: none; } }
+
+/* ══════════════════════════════════════════════════════════════
+   CERTIFICATE SECTION
+══════════════════════════════════════════════════════════════ */
+.certificate-section {
+  padding: 100px 0;
+  background: var(--brand);
+  position: relative;
+  overflow: hidden;
+}
+.certificate-section::before {
+  content: '';
+  position: absolute;
+  top: -5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px; height: 700px;
+  background: radial-gradient(ellipse at center, rgba(11,109,240,.38) 0%, transparent 65%);
+  pointer-events: none;
+}
+.cert-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 64px;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .cert-inner { grid-template-columns: 1fr; }
+}
+.cert-text { }
+.cert-text .section-title { margin-bottom: 20px; }
+.cert-text p {
+  font-size: 16px;
+  color: rgba(255,255,255,.65);
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+.cert-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+.cert-features li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 14px;
+  color: rgba(255,255,255,.80);
+  line-height: 1.5;
+}
+.cert-features li span { color: #4ade80; font-weight: 700; flex-shrink: 0; }
+
+/* Certificate card visual */
+.cert-card {
+  background: linear-gradient(145deg, #fff8e1 0%, #fffde7 50%, #fff9c4 100%);
+  border: 2px solid rgba(218,165,32,.35);
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow: 0 24px 64px rgba(0,0,0,.35), 0 0 0 1px rgba(218,165,32,.20);
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+.cert-card::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px dashed rgba(218,165,32,.35);
+  border-radius: 14px;
+  pointer-events: none;
+}
+.cert-card-logo {
+  margin: 0 auto 16px;
+  height: 36px;
+  filter: brightness(0) saturate(100%) invert(8%) sepia(90%) saturate(2000%) hue-rotate(230deg);
+  opacity: .85;
+}
+.cert-title {
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #9a7a1a;
+  margin-bottom: 10px;
+}
+.cert-heading {
+  font-family: var(--font-head);
+  font-size: 18px;
+  font-weight: 800;
+  color: #1D0084;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.cert-sub {
+  font-size: 12px;
+  color: #7a6010;
+  margin-bottom: 20px;
+}
+.cert-line { width: 80px; height: 2px; background: linear-gradient(90deg, transparent, #c9971a, transparent); margin: 0 auto 20px; }
+.cert-student {
+  font-size: 13px;
+  color: #4a3a08;
+  margin-bottom: 4px;
+}
+.cert-student-name {
+  font-family: var(--font-head);
+  font-size: 20px;
+  font-weight: 700;
+  color: #1D0084;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+.cert-level {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #9a7a1a;
+  background: rgba(218,165,32,.12);
+  border: 1px solid rgba(218,165,32,.3);
+  padding: 5px 14px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+.cert-seal {
+  width: 64px; height: 64px;
+  background: radial-gradient(circle, #1D0084 0%, #025dc7 100%);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px;
+  margin: 0 auto 16px;
+  box-shadow: 0 4px 20px rgba(29,0,132,.35);
+  border: 3px solid rgba(218,165,32,.45);
+}
+.cert-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(218,165,32,.25);
+}
+.cert-sign { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
+.cert-sign-name { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: #1D0084; font-style: italic; }
+.cert-sign-role { font-size: 9px; color: #9a7a1a; text-transform: uppercase; letter-spacing: .08em; }
+.cert-date { font-size: 10px; color: #9a7a1a; text-align: right; }
+
+/* Payment logos */
+.payment-logos {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  align-items: center;
+}
+.pay-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  border: 1px solid var(--border);
+  background: #fff;
+  white-space: nowrap;
+}
+.pay-visa     { color: #1a1f71; letter-spacing: .03em; font-size: 14px; }
+.pay-mc       { display: flex; align-items: center; gap: 0; padding: 0 8px; }
+.pay-mc-r     { width: 18px; height: 18px; border-radius: 50%; background: #EB001B; }
+.pay-mc-o     { width: 18px; height: 18px; border-radius: 50%; background: #F79E1B; margin-left: -7px; }
+.pay-ideal    { color: #c0017c; font-weight: 900; font-size: 12px; letter-spacing: -.01em; }
+.pay-ideal span { color: #000; }
+.pay-klarna   { background: #ffb3c7; border-color: #ffb3c7; color: #000; font-size: 12px; }
+.pay-wero     { background: #1b1b2f; border-color: #1b1b2f; color: #fff; font-size: 12px; }
