@@ -58,11 +58,10 @@
     }
     #hn-right{ display:flex; align-items:center; }
     #hn-mbar .cta{
-      display:inline-block; text-decoration:none; font-weight:800;
+      display:inline-block; text-decoration:none; font-weight:700;
       text-transform:uppercase; font-size:11px; letter-spacing:.04em;
       padding:9px 14px; border-radius:10px;
-      background:#4da3ff; color:#0a1a4a;
-      box-shadow:0 6px 16px rgba(77,163,255,.35);
+      background:#4da3ff; color:#fff;
       white-space:nowrap; transition:transform .2s ease,filter .2s ease;
     }
     #hn-mbar .cta:active{ transform:scale(.96); }
@@ -894,36 +893,40 @@
           <div class="payment-logos">
             <!-- Visa -->
             <div class="pay-logo">
-              <svg height="16" viewBox="0 0 780 500" xmlns="http://www.w3.org/2000/svg">
+              <svg height="18" viewBox="0 0 780 500" xmlns="http://www.w3.org/2000/svg">
                 <path d="M293.2 348.7l33.4-195.7h53.4l-33.4 195.7h-53.4zm246.7-191.2c-10.6-3.9-27.2-8.1-47.9-8.1-52.8 0-90 26.5-90.3 64.5-.3 28.1 26.6 43.7 46.9 53.1 20.8 9.6 27.8 15.7 27.7 24.3-.1 13.1-16.6 19.1-32 19.1-21.4 0-32.7-2.9-50.2-10l-6.9-3.1-7.5 43.5c12.5 5.4 35.5 10.1 59.5 10.3 56.1 0 92.5-26.2 92.9-66.9.2-22.3-14.1-39.2-45-53.2-18.8-9.1-30.2-15.1-30.1-24.3 0-8.1 9.7-16.8 30.7-16.8 17.5-.3 30.2 3.5 40.1 7.5l4.8 2.2 7.3-42zm137.4-4.5h-41.2c-12.8 0-22.3 3.5-27.9 16.1l-79.2 178.6h56l11.1-29.2 68.3.1c1.6 6.8 6.5 29.1 6.5 29.1h49.5L677.3 153zm-65.8 122.5c4.4-11.2 21.2-54.4 21.2-54.4-.3.5 4.4-11.3 7.1-18.6l3.6 16.8s10.2 46.4 12.3 56.2h-44.2zm-358.7-122.5l-52.4 133.8-5.6-27.1c-9.7-31.1-40-64.9-73.8-81.8l47.9 171.8 56.5-.1 84.1-196.6H254.8z" fill="#1a1f71"/>
                 <path d="M187.4 153h-86.2l-.7 4c67.1 16.2 111.5 55.4 129.9 102.5l-18.7-89.7c-3.3-12.4-12.6-16.3-24.3-16.8z" fill="#f9a533"/>
               </svg>
             </div>
             <!-- Mastercard -->
             <div class="pay-logo">
-              <svg height="22" viewBox="0 0 131.39 86.9" xmlns="http://www.w3.org/2000/svg">
+              <svg height="26" viewBox="0 0 131.39 86.9" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="49.01" cy="43.45" r="30.01" fill="#EB001B"/>
                 <circle cx="82.38" cy="43.45" r="30.01" fill="#F79E1B"/>
                 <path d="M65.7 19.8a30 30 0 0 1 0 47.3 30 30 0 0 1 0-47.3z" fill="#FF5F00"/>
               </svg>
             </div>
             <!-- iDEAL -->
-            <div class="pay-logo">
-              <svg height="20" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                <text x="2" y="48" font-family="Arial Black,sans-serif" font-weight="900" font-size="52" fill="#000">i</text>
-                <text x="42" y="48" font-family="Arial,sans-serif" font-weight="700" font-size="42" fill="#C0017C">DEAL</text>
+            <div class="pay-logo" style="padding:6px 10px;">
+              <svg height="22" viewBox="0 0 72 30" xmlns="http://www.w3.org/2000/svg">
+                <!-- dot above i -->
+                <circle cx="6" cy="4.5" r="4.5" fill="#C00B82"/>
+                <!-- i stem -->
+                <rect x="1.5" y="11" width="9" height="18" rx="2" fill="#000"/>
+                <!-- DEAL text -->
+                <text x="17" y="28" font-family="Arial Black,sans-serif" font-weight="900" font-size="21" fill="#000">DEAL</text>
               </svg>
             </div>
             <!-- Klarna -->
-            <div class="pay-logo" style="background:#FFB3C7;border-color:#FFB3C7;">
-              <svg height="16" viewBox="0 0 86 24" xmlns="http://www.w3.org/2000/svg">
-                <text x="2" y="19" font-family="Arial Black,sans-serif" font-weight="900" font-size="18" fill="#000">Klarna</text>
+            <div class="pay-logo" style="background:#FFB3C7;border-color:#FFB3C7;padding:6px 12px;">
+              <svg height="18" viewBox="0 0 74 22" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="17" font-family="Arial,sans-serif" font-weight="800" font-size="17" letter-spacing="-0.3" fill="#17120E">klarna</text>
               </svg>
             </div>
             <!-- Wero -->
-            <div class="pay-logo" style="background:#1b1b2f;border-color:#1b1b2f;">
-              <svg height="16" viewBox="0 0 70 20" xmlns="http://www.w3.org/2000/svg">
-                <text x="2" y="15" font-family="Arial,sans-serif" font-weight="700" font-size="14" fill="#fff">Wero</text>
+            <div class="pay-logo" style="background:#0055A4;border-color:#0055A4;padding:6px 12px;">
+              <svg height="18" viewBox="0 0 54 20" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="16" font-family="Arial,sans-serif" font-weight="800" font-size="16" fill="#fff">Wero</text>
               </svg>
             </div>
           </div>

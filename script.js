@@ -164,13 +164,30 @@
   const dot = document.getElementById('sf-dot');
   if (!section || !dot) return;
 
-  window.addEventListener('scroll', () => {
+  // 5% margin at each end so the dot never touches the white section edges
+  const START = 0.05;
+  const END   = 0.95;
+
+  let ticking = false;
+
+  function update() {
     const { top, height } = section.getBoundingClientRect();
     const travel = height - window.innerHeight;
     const raw = travel > 0 ? (-top) / travel : 0;
-    const progress = Math.min(Math.max(raw, 0), 1);
+    const clamped = Math.min(Math.max(raw, 0), 1);
+    const progress = START + clamped * (END - START);
     dot.style.top = (progress * 100) + '%';
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
   }, { passive: true });
+
+  update();
 })();
 
 /* ── Progress bar animation on mockup ───────────────────────── */

@@ -955,15 +955,14 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 .sf-divider-dot {
   position: absolute;
-  width: 14px; height: 14px;
+  width: 16px; height: 16px;
   border-radius: 50%;
   background: var(--brand-mid);
-  border: 2px solid #fff;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 0 4px rgba(2,93,199,.12), 0 0 12px rgba(2,93,199,.30);
-  transition: top .08s linear;
-  top: 0;
+  box-shadow: 0 0 0 5px rgba(2,93,199,.14), 0 0 18px rgba(2,93,199,.22);
+  transition: top .22s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  top: 5%;
 }
 
 .sf-grid {
@@ -1242,7 +1241,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .price-current {
   font-family: var(--font-head);
   font-size: 64px;
-  font-weight: 900;
+  font-weight: 600;
   color: var(--brand);
   line-height: 1;
   letter-spacing: -.02em;
