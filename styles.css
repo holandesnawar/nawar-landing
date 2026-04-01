@@ -517,7 +517,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   pointer-events: none;
 }
 .pain .section-title.dark { text-align: center; }
-.pain .eyebrow-light { color: #e05c5c; background: rgba(224,92,92,.08); border-color: rgba(224,92,92,.18); }
+.pain .section-title em { font-style: normal; color: var(--brand-mid); }
 
 .pain-grid {
   display: grid;
