@@ -1,12 +1,11 @@
 /* ══════════════════════════════════════════════════════════════
-   HOLANDÉS CON NAWAR — LANDING JS (v4)
+   HOLANDÉS CON NAWAR — LANDING JS (v5)
 ══════════════════════════════════════════════════════════════ */
 
-/* ── Countdown (pricing) — sincronizado con el nav ────────────── */
+/* ── Countdown (pricing) ─────────────────────────────────────── */
 (function initCountdown() {
   const STORAGE_KEY = 'nawar_offer_end_v2';
   const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
-
   let endTs = localStorage.getItem(STORAGE_KEY);
   if (!endTs) { endTs = Date.now() + WEEK_MS; localStorage.setItem(STORAGE_KEY, endTs); }
   else { endTs = parseInt(endTs, 10); }
@@ -17,7 +16,6 @@
     const s = Math.floor(diff / 1000), m = Math.floor(s / 60), h = Math.floor(m / 60), d = Math.floor(h / 24);
     return `${d}d ${pad(h % 24)}h ${pad(m % 60)}m ${pad(s % 60)}s`;
   }
-
   const priceEl = document.getElementById('price-countdown');
   function tick() {
     const remaining = endTs - Date.now();
@@ -32,7 +30,7 @@
 (function initDesktopNav() {
   window.addEventListener('scroll', function () {
     const nav = document.getElementById('nav');
-    if (nav) nav.classList.toggle('scrolled', window.scrollY > 30);
+    if (nav) nav.classList.toggle('scrolled', window.scrollY > 40);
   }, { passive: true });
 
   const STORAGE_KEY = 'nawar_offer_end_v2';
@@ -60,7 +58,7 @@
           ? [...entry.target.parentElement.children].filter(el => el.hasAttribute('data-anim') && !el.classList.contains('visible'))
           : [entry.target];
         const idx = siblings.indexOf(entry.target);
-        setTimeout(() => entry.target.classList.add('visible'), idx >= 0 ? idx * 70 : 0);
+        setTimeout(() => entry.target.classList.add('visible'), idx >= 0 ? idx * 80 : 0);
         observer.unobserve(entry.target);
       }
     });
@@ -72,13 +70,13 @@
 (function initFAQ() {
   const items = document.querySelectorAll('.faq-item');
   items.forEach(item => {
-    const btn = item.querySelector('.faq-q');
+    const btn = item.querySelector('.faq-question');
     if (!btn) return;
     btn.addEventListener('click', () => {
       const isOpen = item.classList.contains('open');
       items.forEach(i => {
         i.classList.remove('open');
-        const q = i.querySelector('.faq-q');
+        const q = i.querySelector('.faq-question');
         if (q) q.setAttribute('aria-expanded', 'false');
       });
       if (!isOpen) {
@@ -102,7 +100,7 @@
 
 /* ── Scroll suave para anclas ─────────────────────────────────── */
 (function initSmoothScroll() {
-  const OFFSET = 74 + 12;
+  const OFFSET = 72 + 16;
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
       const id = link.getAttribute('href').slice(1);
@@ -118,13 +116,13 @@
 
 /* ── Animación de la barra de progreso del mockup ─────────────── */
 (function animateProgress() {
-  const fill = document.querySelector('.dv-fill');
+  const fill = document.querySelector('.mockup-progress-fill');
   if (!fill) return;
   const target = fill.style.width || '65%';
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        setTimeout(() => { fill.style.width = target; }, 350);
+        setTimeout(() => { fill.style.width = target; }, 400);
         observer.unobserve(entry.target);
       }
     });
