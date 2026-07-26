@@ -27,11 +27,13 @@
   }
 
   const priceEl = document.getElementById('price-countdown');
+  const finalEl = document.getElementById('final-countdown');
 
   function tick() {
     const remaining = endTs - Date.now();
     const str = fmt(remaining);
     if (priceEl) priceEl.textContent = str;
+    if (finalEl) finalEl.textContent = '⏰ Precio de lanzamiento termina en: ' + str;
     if (remaining <= 0) clearInterval(timer);
   }
 
